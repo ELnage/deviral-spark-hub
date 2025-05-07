@@ -63,15 +63,18 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				// Updated color scheme to match design
 				deviral: {
-					blue: '#304EA1',
-					yellow: '#FFC92F',
-					dark: '#10294B',
-					light: '#FFFFFF'
+					blue: '#1e5283',
+					lightBlue: '#6da6de',
+					darkBlue: '#0d2b46',
+					white: '#FFFFFF',
+					gray: '#f5f5f5',
+					lightGray: '#f0f0f0'
 				}
 			},
 			backgroundImage: {
-				'hero-pattern': "url('https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?q=80&w=2070&auto=format&fit=crop')"
+				'hero-pattern': "url('/lovable-uploads/2e8d1091-2869-471a-935a-a46497c95a48.png')"
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

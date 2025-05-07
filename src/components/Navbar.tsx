@@ -1,30 +1,41 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { X, Menu } from "lucide-react";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
 
   return (
-    <header className="fixed w-full bg-transparent z-50 py-4">
+    <header className={`fixed w-full z-50 py-4 ${scrolled ? 'bg-deviral-blue shadow-md' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="flex items-center">
-            <img src="https://placehold.co/100x40/304EA1/FFFFFF.png?text=DEVIRAL" alt="Deviral Logo" className="h-10" />
+            <span className="text-2xl font-bold text-white">G2<span className="text-sm align-text-top">◯</span></span>
           </a>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#" className="text-white hover:text-deviral-yellow font-medium transition">الرئيسية</a>
-          <a href="#services" className="text-white hover:text-deviral-yellow font-medium transition">خدماتنا</a>
-          <a href="#about" className="text-white hover:text-deviral-yellow font-medium transition">من نحن</a>
-          <a href="#testimonials" className="text-white hover:text-deviral-yellow font-medium transition">عملاؤنا</a>
-          <a href="#contact" className="text-white hover:text-deviral-yellow font-medium transition">اتصل بنا</a>
-          <Button className="bg-deviral-yellow text-deviral-dark hover:bg-white hover:text-deviral-blue transition-colors">
-            ابدأ الآن
-          </Button>
+          <a href="#" className="text-white hover:text-gray-200 font-medium transition">Home</a>
+          <a href="#services" className="text-white hover:text-gray-200 font-medium transition">Services</a>
+          <a href="#about" className="text-white hover:text-gray-200 font-medium transition">About Us</a>
+          <a href="#contact" className="text-white hover:text-gray-200 font-medium transition">Contact</a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -38,16 +49,12 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <nav className="md:hidden bg-deviral-dark absolute top-full left-0 right-0 p-4 shadow-md animate-fade-in">
+        <nav className="md:hidden bg-deviral-blue absolute top-full left-0 right-0 p-4 shadow-md animate-fade-in">
           <div className="flex flex-col space-y-4">
-            <a href="#" className="text-white hover:text-deviral-yellow font-medium transition" onClick={() => setMobileMenuOpen(false)}>الرئيسية</a>
-            <a href="#services" className="text-white hover:text-deviral-yellow font-medium transition" onClick={() => setMobileMenuOpen(false)}>خدماتنا</a>
-            <a href="#about" className="text-white hover:text-deviral-yellow font-medium transition" onClick={() => setMobileMenuOpen(false)}>من نحن</a>
-            <a href="#testimonials" className="text-white hover:text-deviral-yellow font-medium transition" onClick={() => setMobileMenuOpen(false)}>عملاؤنا</a>
-            <a href="#contact" className="text-white hover:text-deviral-yellow font-medium transition" onClick={() => setMobileMenuOpen(false)}>اتصل بنا</a>
-            <Button className="bg-deviral-yellow text-deviral-dark hover:bg-white hover:text-deviral-blue transition-colors w-full">
-              ابدأ الآن
-            </Button>
+            <a href="#" className="text-white hover:text-gray-200 font-medium transition" onClick={() => setMobileMenuOpen(false)}>Home</a>
+            <a href="#services" className="text-white hover:text-gray-200 font-medium transition" onClick={() => setMobileMenuOpen(false)}>Services</a>
+            <a href="#about" className="text-white hover:text-gray-200 font-medium transition" onClick={() => setMobileMenuOpen(false)}>About Us</a>
+            <a href="#contact" className="text-white hover:text-gray-200 font-medium transition" onClick={() => setMobileMenuOpen(false)}>Contact</a>
           </div>
         </nav>
       )}
