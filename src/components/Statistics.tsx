@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const statisticsData = [
-  { id: 1, value: 150, label: "عميل سعيد" },
-  { id: 2, value: 300, label: "مشروع مكتمل" },
-  { id: 3, value: 95, label: "مراجعات إيجابية" },
+  { id: 1, value: 150, label: "مشروع مكتمل" },
+  { id: 2, value: 50, label: "عميل سعيد" },
+  { id: 3, value: 10, label: "سنوات خبرة" },
   { id: 4, value: 24, label: "خدمة متخصصة" }
 ];
 
@@ -42,8 +42,8 @@ const Counter: React.FC<CounterProps> = ({ end, duration, label, symbol = "" }) 
   }, [end, duration, inView]);
 
   return (
-    <div ref={ref} className="text-center">
-      <div className="text-5xl font-bold mb-2 gradient-text">
+    <div ref={ref} className="text-center bg-white p-8 rounded-lg shadow-md">
+      <div className="text-4xl font-bold mb-2 text-deviral-blue">
         {count}{symbol}
       </div>
       <div className="text-lg text-gray-600">{label}</div>
@@ -53,25 +53,25 @@ const Counter: React.FC<CounterProps> = ({ end, duration, label, symbol = "" }) 
 
 const Statistics = () => {
   return (
-    <section id="statistics" className="py-24 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="statistics" className="section-padding bg-deviral-dark text-white">
+      <div className="container-custom">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="gradient-text">إنجازاتنا</span>
+          <h2 className="section-title text-white">
+            إنجازاتنا بالأرقام
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            نفخر بما حققناه من نجاحات مع عملائنا في مختلف القطاعات
+          <p className="section-subtitle text-white/70">
+            نفخر بما حققناه من نجاحات خلال مسيرتنا في عالم التكنولوجيا
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 animate-fade-in">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {statisticsData.map((stat) => (
             <Counter
               key={stat.id}
               end={stat.value}
               duration={2000}
               label={stat.label}
-              symbol={stat.id === 3 ? "%" : "+"}
+              symbol={stat.id === 3 ? "+" : "+"}
             />
           ))}
         </div>

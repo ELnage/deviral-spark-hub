@@ -64,18 +64,14 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				deviral: {
-					purple: '#8B5CF6',
-					blue: '#3B82F6',
-					pink: '#EC4899',
-					lightPurple: '#C4B5FD',
-					dark: '#1F2937',
-					light: '#F9FAFB'
+					blue: '#304EA1',
+					yellow: '#FFC92F',
+					dark: '#10294B',
+					light: '#FFFFFF'
 				}
 			},
 			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'hero-gradient': 'linear-gradient(to right, #8B5CF6, #3B82F6, #EC4899)',
-				'card-gradient': 'linear-gradient(to bottom right, #8B5CF6, #3B82F6)'
+				'hero-pattern': "url('https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?q=80&w=2070&auto=format&fit=crop')"
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -5,37 +5,25 @@ import { ChevronLeft } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="pt-32 pb-20 overflow-hidden bg-gradient-to-br from-white via-indigo-50/30 to-purple-50/30 text-right">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              نحول رؤيتك الى <span className="gradient-text">واقع رقمي</span>
-            </h1>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl">
-              نساعدك في بناء تواجدك الرقمي وتنمية عملك من خلال حلول تسويقية متكاملة تناسب احتياجاتك
-            </p>
-            <div className="flex flex-wrap gap-4 justify-end">
-              <Button className="bg-white border border-deviral-purple text-deviral-purple hover:bg-deviral-purple/10 transition-colors">
-                المزيد عنا
-              </Button>
-              <Button className="bg-hero-gradient hover:opacity-90 transition-opacity">
-                تواصل معنا الآن
-                <ChevronLeft className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-          <div className="order-1 md:order-2 relative">
-            <div className="relative h-72 md:h-96 w-full">
-              <div className="absolute inset-0 bg-hero-gradient rounded-full opacity-10 blur-3xl"></div>
-              <div className="relative z-10 h-full w-full flex items-center justify-center">
-                <img 
-                  src="https://images.unsplash.com/photo-1605152276897-4f618f831968?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Digital Marketing Dashboard" 
-                  className="rounded-xl shadow-2xl max-w-full max-h-full object-cover transform hover:scale-105 transition-transform duration-500 ease-in-out"
-                />
-              </div>
-            </div>
+    <section className="relative min-h-screen bg-hero-pattern bg-cover bg-center text-right flex items-center">
+      <div className="absolute inset-0 bg-deviral-dark bg-opacity-80"></div>
+      <div className="container mx-auto px-4 md:px-6 relative z-10 py-20">
+        <div className="max-w-3xl mr-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
+            حلول تكنولوجية <br />
+            <span className="text-deviral-yellow">لمستقبل أفضل</span>
+          </h1>
+          <p className="text-lg text-white/80 mb-8 max-w-xl">
+            نقدم حلول برمجية متكاملة وخدمات تقنية متميزة لمساعدة الشركات على النمو والتطور في العصر الرقمي
+          </p>
+          <div className="flex flex-wrap gap-4 justify-start">
+            <Button className="bg-deviral-yellow text-deviral-dark hover:bg-white transition-colors font-bold text-base px-8 py-6">
+              اطلب استشارة مجانية
+              <ChevronLeft className="mr-2 h-5 w-5" />
+            </Button>
+            <Button variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white/10 transition-colors font-bold text-base px-8 py-6">
+              اكتشف خدماتنا
+            </Button>
           </div>
         </div>
       </div>

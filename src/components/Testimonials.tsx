@@ -6,24 +6,27 @@ import { ChevronRight, ChevronLeft } from "lucide-react";
 const testimonialsData = [
   {
     id: 1,
-    quote: "ساعدتنا ديفيرال في زيادة مبيعاتنا بنسبة 200% من خلال حملات التسويق الرقمي المستهدفة",
+    quote: "تعاونت مع شركة ديفيرال في تطوير موقع الويب الخاص بشركتنا وكانت التجربة ممتازة من جميع النواحي. احترافية عالية ودقة في التنفيذ",
     author: "أحمد محمد",
-    company: "شركة التقنية العربية",
-    image: "https://randomuser.me/api/portraits/men/1.jpg"
+    position: "مدير عام",
+    company: "شركة التقنية للحلول",
+    image: "https://randomuser.me/api/portraits/men/32.jpg"
   },
   {
     id: 2,
-    quote: "استراتيجية المحتوى التي طورتها ديفيرال ساعدتنا في الوصول إلى جمهور جديد وزيادة التفاعل",
+    quote: "ساعدنا فريق ديفيرال في تطوير تطبيق الهاتف الخاص بنا وقدموا حلولاً مبتكرة تجاوزت توقعاتنا. أنصح بالتعامل معهم",
     author: "سارة أحمد",
-    company: "مجموعة الأفق",
-    image: "https://randomuser.me/api/portraits/women/1.jpg"
+    position: "مديرة التسويق",
+    company: "مجموعة النخبة",
+    image: "https://randomuser.me/api/portraits/women/44.jpg"
   },
   {
     id: 3,
-    quote: "تصميم موقعنا الجديد ساهم في تحسين تجربة المستخدم وزيادة معدلات التحويل بشكل ملحوظ",
+    quote: "استراتيجية التسويق الرقمي التي طورتها ديفيرال ساعدتنا في زيادة المبيعات بنسبة 40% خلال ثلاثة أشهر فقط",
     author: "محمد علي",
+    position: "المدير التنفيذي",
     company: "شركة المستقبل",
-    image: "https://randomuser.me/api/portraits/men/2.jpg"
+    image: "https://randomuser.me/api/portraits/men/86.jpg"
   },
 ];
 
@@ -39,13 +42,13 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-white text-right">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="testimonials" className="section-padding bg-white text-right">
+      <div className="container-custom">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="gradient-text">ماذا يقول عملاؤنا</span>
+          <h2 className="section-title text-deviral-dark">
+            آراء العملاء
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="section-subtitle">
             نفخر بثقة عملائنا ونسعى دائماً لتقديم أفضل الخدمات التي تلبي احتياجاتهم
           </p>
         </div>
@@ -58,7 +61,7 @@ const Testimonials = () => {
                   <img 
                     src={testimonialsData[activeIndex].image} 
                     alt={testimonialsData[activeIndex].author}
-                    className="w-full h-full object-cover rounded-full border-4 border-deviral-purple/20"
+                    className="w-full h-full object-cover rounded-full border-4 border-deviral-blue/20"
                   />
                 </div>
                 <div className="flex-1">
@@ -66,8 +69,12 @@ const Testimonials = () => {
                     "{testimonialsData[activeIndex].quote}"
                   </blockquote>
                   <div>
-                    <div className="font-bold text-xl mb-1">{testimonialsData[activeIndex].author}</div>
-                    <div className="text-deviral-purple">{testimonialsData[activeIndex].company}</div>
+                    <div className="font-bold text-xl mb-1 text-deviral-dark">
+                      {testimonialsData[activeIndex].author}
+                    </div>
+                    <div className="text-gray-600">
+                      {testimonialsData[activeIndex].position} - {testimonialsData[activeIndex].company}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -77,7 +84,7 @@ const Testimonials = () => {
           <div className="flex justify-center mt-8 gap-4">
             <button 
               onClick={prevTestimonial}
-              className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-deviral-purple hover:bg-deviral-purple hover:text-white transition-colors border border-deviral-purple/20"
+              className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-deviral-blue hover:bg-deviral-blue hover:text-white transition-colors border border-deviral-blue/20"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
@@ -87,7 +94,7 @@ const Testimonials = () => {
                   key={index}
                   onClick={() => setActiveIndex(index)}
                   className={`w-3 h-3 rounded-full ${
-                    index === activeIndex ? "bg-deviral-purple" : "bg-gray-300"
+                    index === activeIndex ? "bg-deviral-blue" : "bg-gray-300"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -95,7 +102,7 @@ const Testimonials = () => {
             </div>
             <button 
               onClick={nextTestimonial}
-              className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-deviral-purple hover:bg-deviral-purple hover:text-white transition-colors border border-deviral-purple/20"
+              className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-deviral-blue hover:bg-deviral-blue hover:text-white transition-colors border border-deviral-blue/20"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>

@@ -1,5 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 
 @tailwind base;
@@ -86,36 +85,46 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-family: 'Tajawal', sans-serif;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
 
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-hero-gradient;
-  }
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-  .card-shine {
-    position: relative;
-    overflow: hidden;
-  }
+.section-padding {
+  @apply py-16 md:py-24;
+}
 
-  .card-shine::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.3) 0%,
-      transparent 70%
-    );
-    transform: rotate(30deg);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
+.container-custom {
+  @apply container mx-auto px-4 md:px-6;
+}
 
-  .card-shine:hover::before {
-    opacity: 1;
-  }
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-all;
+}
+
+.btn-secondary {
+  @apply bg-white hover:bg-gray-100 text-blue-600 font-medium py-2 px-6 rounded-lg border border-blue-600 transition-all;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-4 text-center;
+}
+
+.section-subtitle {
+  @apply text-lg text-gray-600 mb-12 max-w-3xl mx-auto text-center;
+}
+
+.grid-card {
+  @apply bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow;
+}
+
+.service-icon {
+  @apply w-16 h-16 flex items-center justify-center text-white rounded-full mb-4;
 }
